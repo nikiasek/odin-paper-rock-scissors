@@ -1,3 +1,5 @@
+let playerChoice, pcChoice
+
 function getComputerChoice () {
     switch(Math.floor(Math.random() * 3)) {
         case 0:
@@ -14,11 +16,23 @@ function getComputerChoice () {
 
 function getPlayerChoice() {
     switch(prompt("Choose between:\nRock | Paper | Scissors").toLowerCase()) {
-        case "rock" || "paper" || "scissors":
-            return "spravně"
+        case "rock":
+            playerChoice = "rock"
+            return playerChoice
+        case "paper":
+            playerChoice = "paper"
+            return playerChoice
+        case "scissors":
+            playerChoice = "scissors"
+            return playerChoice
         default:
-            console.log("špatný výběr. zvolte jinou")
+            return "špatně"
     }
+}
+
+function round(playerChoice, pcChoice) {
+    plCh = getPlayerChoice()
+    pcCh = getComputerChoice()
 }
 
 console.log(getComputerChoice())
